@@ -20,23 +20,34 @@
 # Написать рекурсивную функцию, которая выводит N звезд в ряд, число N задает пользователь.
 # Проиллюстрируйте работу функции примером. (протестировать)
 #
-n = int(input(f"Enter the number: "))
-# symbol = "*"
-def stars(n):
-    if n > 0:
-        stars(n-1)
-    # return symbol + stars(n - 1)
 
-    # if n >= 1:
-    #     return symbol + stars(n-1)
 
-    # print(f"{symbol}")
-print("*", end=" ")
-    # stars(n - 1)
-#
+def number_to_stars(text, n):
+    if not n == 0:
+        return number_to_stars(text + '*', n - 1)
+    else:
+        return text
+
+number = int(input("Enter number: "))
+result = number_to_stars('', number)
+
+print(result)
+
 
 #
 # Задание 3.
 #
 # Написать рекурсивную функцию, которая вычисляет сумму всех чисел в диапазоне от a до b.
 # Пользователь вводит a и b. Проиллюстрируйте работу функции примером.
+
+# a = int(input(f"Enter the first number: "))
+# b = int(input(f"Enter the second number: "))
+# def sum_range(a, b):
+#
+#     if a > b:
+#
+#         return 0
+#
+#     return a + sum_range(a+1, b)
+#
+# print(sum_range(a, b))
